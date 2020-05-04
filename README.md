@@ -2,6 +2,7 @@
 
 ## Index
 * [Introduction](#introduction)
+* [Building Docker Image](#building-docker-image)
 * [Setting up Vagrant Enviroment (Optional)](#setting-up-dev-enviroment)
 * [Backend - Laravel](#backend---laravel)
   * [Routes](#routes)
@@ -30,6 +31,16 @@
 
 # Introduction
 The purpose of the application is to allow Car Rental businesses to make reservation process for their customers both intuitive and easier. This application is based on REST API architecture which was realized with Laravel, AngularJS and MySQL. UI is powered by Bootstrap.
+
+# Building Docker Image
+
+```
+docker build -t rentacar_laravel .
+
+docker image tag rentacar_laravel registry.example.com/rentacar_laravel
+
+docker push registry.example.com/rentacar_laravel
+```
 
 # Setting up Dev Enviroment (optional)
 After forking this project create database.sqlite file from project directory.
