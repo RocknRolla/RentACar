@@ -1,8 +1,11 @@
 FROM php:7.0-alpine
 RUN docker-php-ext-install pdo_mysql
 
-RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && composer global require hirak/prestissimo --no-plugins --no-scripts
-RUN composer --version
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer && \
+		composer self-update 1.10.16 && \
+		composer --version && \
+		composer global require hirak/prestissimo --no-plugins --no-scripts
+
 RUN composer global require hirak/prestissimo
 
 WORKDIR /usr/src/myapp
